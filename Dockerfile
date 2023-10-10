@@ -3,7 +3,7 @@ WORKDIR /app
 COPY . .
 RUN yarn install --production
 RUN --mount=type=secret,id=AWS_ACCESS_KEY_ID \
-  --mount=type=secret,id=AWS_SECRET_ACCESS_KEY 
+   export AWS_ACCESS_KEY_ID=$(cat /run/secrets/AWS_ACCESS_KEY_ID)
 
 RUN cat /run/secrets/AWS_ACCESS_KEY_ID
 CMD ["node", "src/index.js"]
