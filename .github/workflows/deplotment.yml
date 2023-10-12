@@ -51,7 +51,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           source: 'some.txt'
-          target: 'home/ubutu/sources'
+          target: 'home/ubuntu/sources'
           rm: true
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.0.0
