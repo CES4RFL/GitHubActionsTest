@@ -2,7 +2,7 @@ apiVersion: apps/v1
 #Tipo de template deployment
 kind: Deployment
 metadata:
-  name: web-app-deployment
+  name: web-app
   labels:
     #Con esta etiqueta se nombraran todos los pods y replicas que se creen con este manifesto
     app: web-app
