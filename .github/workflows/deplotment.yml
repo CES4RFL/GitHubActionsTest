@@ -50,7 +50,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
-          source: 'some.txt'
+          source: 'web-app-service.yml,web-app.yml'
           target: 'sources'
           rm: true
       - name: executing remote ssh commands using password
@@ -60,7 +60,6 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            whoami
-            pwd
             cd sources
-            cat 'some.txt'
+            kubectl apply -f web-app.yml
+            kubectl apply -f web-app-service.yml
