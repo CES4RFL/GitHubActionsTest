@@ -62,5 +62,5 @@ jobs:
           script: |
             whoami
             pwd
-            cd home/ubuntu/sources
-            ls -al
+            cd sources
+            cat 'some.txt'
